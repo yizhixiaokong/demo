@@ -1,0 +1,23 @@
+body {
+    background: #454545;
+}
+a {
+    text-decoration: none;
+}
+a ,body {
+    color: #eee;
+}
+.side-bar {
+    float: left;
+    width: 20%;
+
+}
+.main {
+    float: right;
+    width: 80%;
+}
+.header .logo {
+    padding: 10px 20px;
+    font-size: 30px;
+    display: inline-block;
+}
