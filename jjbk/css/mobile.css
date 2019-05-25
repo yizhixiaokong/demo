@@ -10,7 +10,8 @@
     padding-right: 10px;
 }
 
-.article-list {
+.article-list,
+.article {
     margin: 0;
 }
 
