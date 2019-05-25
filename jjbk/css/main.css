@@ -55,7 +55,8 @@ body {
     margin-bottom: 10px;
 }
 
-.article-list {
+.article-list,
+.article {
     background: #fff;
     margin-right: 30%;
     padding: 20px 30px;
