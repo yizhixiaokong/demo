@@ -13,7 +13,24 @@
     <div id="app">
         {{ message }} {{ hi }}
         <div>
-            <span>你的名字是:{{name}}</span>
+            <input type="text" v-model="name">
+            <span v-if="name">你的名字是:{{name}}</span>
+        </div>
+        <div>
+            <input type="text" v-model="age">
+            <span v-if="age">你的年龄是:{{age}}</span>
+        </div>
+        <div>
+            <input type="text" v-model="sex">
+            <span v-if="sex">你的性别是:{{sex}}</span>
+        </div>
+        <div>
+            <input type="text" v-model="money">
+            <span v-if="money">你的钱有:{{money}}</span>
+        </div>
+        <div>
+            <input type="text" v-model="like">
+            <span v-if="like">你喜欢:{{like}}</span>
         </div>
     </div>
     <script src="../vue.js"></script>
