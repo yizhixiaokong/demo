@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <button v-on="{mouseenter:onEnter,mouseleave:onOut}" v-on:click="onClick">点我</button>
+        <!-- <form v-on:keyup.enter="onEnter" v-on:keyup="onKeyup" v-on:keydown="onKeydown" v-on:submit.prevent="onSubmit"> -->
+        <!-- "v-on:xxx"等同于"@xxx" -->
+        <!-- 上面同样可以用下面这种表达 -->
+        <form @keyup.enter="onEnter" @keyup="onKeyup" @keydown="onKeydown" @submit.prevent="onSubmit">
+            <input type="text">
+            <button type="submit">提交</button>
+        </form>
+
+    </div>
+
+    <script src="../vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
