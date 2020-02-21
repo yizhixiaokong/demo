@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <label>
+            男
+            <input v-model="sex" value="male" type="radio">
+        </label>
+        <label>
+            女
+            <input v-model="sex" value="female" type="radio">
+        </label>
+        <br> {{sex}}<br>
+        <label>
+            香蕉
+            <input v-model="fruit" value="banana" type="checkbox">
+        </label>
+        <label>
+            橘子
+            <input v-model="fruit" value="orange" type="checkbox">
+        </label>
+        <label>
+            苹果
+            <input v-model="fruit" value="apple" type="checkbox">
+        </label>
+        <br>{{fruit}}<br>
+        <textarea v-model="article"></textarea><br>
+        <div>你从哪里来？</div>
+        <select v-model="from">
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">杭州</option>
+        </select>
+        <br>{{from?from==1?'北京':from==2?'上海':'杭州':''}}<br>
+        <br>
+        <div>你到哪里去？</div>
+        <select v-model="destination" multiple>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">杭州</option>
+        </select>
+        <br>{{destination}}
+        <br>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
