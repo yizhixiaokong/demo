@@ -22,6 +22,30 @@ var routes = [{
                 `
         }
     },
+    {
+        path: '/user/:name',
+        component: {
+            template: `
+                    <div>
+                        <div>我叫：{{$route.params.name}}</div>
+                        <div>我今年：{{$route.query.age}}岁</div>
+                        <router-link :to="'/user/' + $route.params.name + '/more'">更多1</router-link>
+                        <router-link to="more" append>更多信息2</router-link>
+                        <router-view></router-view>
+                    </div>
+                `
+        },
+        children: [{
+            path: 'more',
+            component: {
+                template: `
+                        <div>
+                            用户：{{$route.params.name}}的详细信息
+                        </div>
+                    `
+            }
+        }]
+    },
 ];
 
 
