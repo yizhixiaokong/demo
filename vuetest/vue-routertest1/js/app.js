@@ -24,6 +24,7 @@ var routes = [{
     },
     {
         path: '/user/:name',
+        name: 'user',
         component: {
             template: `
                     <div>
@@ -55,4 +56,14 @@ var router = new VueRouter({
 new Vue({
     el: '#app',
     router: router,
+    methods: {
+        surf: function() {
+            setTimeout(function() {
+                this.router.push('/about');
+                setTimeout(function() {
+                    this.router.push({ name: 'user', params: { name: 'jwx', } });
+                }, 2000)
+            }, 2000)
+        }
+    },
 });
