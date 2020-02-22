@@ -21,8 +21,8 @@
         <div v-pin="card1.pinned" class="card">
             <button @click="card1.pinned = !card1.pinned">钉</button> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </div>
-        <div v-pin="card2.pinned" class="card">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        <div v-pin:true.botton.right="card2.pinned" class="card">
+            <button @click="card2.pinned = !card2.pinned">钉</button> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </div>
         <div>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis fugit perspiciatis explicabo quos dolorem ipsa unde consectetur corporis quam exercitationem optio in ut quasi molestias, mollitia, debitis eaque at quidem?
