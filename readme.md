@@ -19,5 +19,12 @@
 
 - bootstraptest：预计是学习bootstrapt用来做测试和记笔记的，目前还基本是空的。
 
+- gotest：安装go时做的简单测试，关于go的学习在另一个仓库learngo中。
 
+- vuetest：学习vue和一些vue工具时候的一些案例和笔记。
 
+- npmtest：装npm之后的测试。
+
+- dsz：似乎是一个类似电商站的页面，好久之前弄得都忘了弄得是啥了。
+
+- hbtest：之前帮同学弄页面时候弄的test，没啥用。
