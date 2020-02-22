@@ -14,6 +14,7 @@ Vue.component('hxx', {
     data: function() {
         return {
             i_said: '',
+
         }
     },
 })
