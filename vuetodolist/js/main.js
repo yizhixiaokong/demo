@@ -11,6 +11,9 @@
             list: [],
             current: {},
         },
+        mounted: function() {
+            this.list = ms.get('list') || this.list;
+        },
         methods: {
             marge: function() {
                 var is_update, id;
@@ -25,7 +28,6 @@
                     todo.id = this.next_id();
                     this.list.push(todo);
                 }
-                console.log(this.list);
                 this.reset_current();
             },
             remove: function(id) {
@@ -46,6 +48,18 @@
                     return item.id == id;
                 })
             },
+        },
+        watch: {
+            list: {
+                deep: true,
+                handler: function(new_val, old_val) {
+                    if (new_val) {
+                        ms.set('list', new_val);
+                    } else {
+                        ms.set('list', []);
+                    }
+                }
+            }
         },
     });
 })();
