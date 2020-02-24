@@ -27,9 +27,11 @@
         </form>
         <div class="task-list">
             <div class="wrap">
-                正在进行
-                <div v-for="(todo, index) in list" class="item">
-                    {{todo.title}}
+                <h2>
+                    正在进行
+                </h2>
+                <div v-if="!todo.completed" v-for="(todo, index) in list" class="item">
+                    <button @click="toggle_complete(todo.id)">完成</button> {{todo.title}}
                     <button @click="remove(todo.id)">删除</button>
                     <button @click="set_current(todo)">更新</button>
                 </div>
@@ -37,9 +39,13 @@
         </div>
         <div class="task-list">
             <div class="wrap">
-                已经完成
-                <div class="complete item">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <h2>
+                    已经完成
+                </h2>
+                <div v-if="todo.completed" v-for="(todo, index) in list" class="complete item">
+                    <button @click="toggle_complete(todo.id)">取消完成</button> {{todo.title}}
+                    <button @click="remove(todo.id)">删除</button>
+                    <button @click="set_current(todo)">更新</button>
                 </div>
             </div>
         </div>

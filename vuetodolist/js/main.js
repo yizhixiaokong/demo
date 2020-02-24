@@ -48,6 +48,10 @@
                     return item.id == id;
                 })
             },
+            toggle_complete: function(id) {
+                var index = this.find_index(id);
+                Vue.set(this.list[index], 'completed', !this.list[index].completed);
+            },
         },
         watch: {
             list: {
