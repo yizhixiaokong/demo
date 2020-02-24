@@ -16,9 +16,7 @@
                 var is_update, id;
                 is_update = id = this.current.id;
                 if (is_update) {
-                    var index = this.list.findIndex(function(item) {
-                        return item.id == is_update;
-                    });
+                    var index = this.find_index(id);
                     Vue.set(this.list, index, copy(this.current));
                 } else {
                     var title = this.current.title;
@@ -31,7 +29,8 @@
                 this.reset_current();
             },
             remove: function(id) {
-                this.list.splice(id, 1);
+                var index = this.find_index(id);
+                this.list.splice(index, 1);
             },
             next_id: function() {
                 return this.list.length + 1;
@@ -41,6 +40,11 @@
             },
             reset_current: function() {
                 this.set_current({});
+            },
+            find_index: function(id) {
+                return this.list.findIndex(function(item) {
+                    return item.id == id;
+                })
             },
         },
     });
