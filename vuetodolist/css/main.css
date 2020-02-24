@@ -118,6 +118,11 @@ button.primary {
     border-radius: 50%;
 }
 
+.el-button {
+    /* width: 25px; */
+    height: 25px;
+}
+
 .toggle-complete:hover {
     background: #50beff;
     border-color: #3587b7;
