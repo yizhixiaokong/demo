@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MyToDoList</title>
     <link rel="stylesheet" href="lib/normalize.css">
+    <link rel="stylesheet" href="lib/index.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
     <link rel="stylesheet" href="css/main.css">
+
 </head>
 
 <body>
@@ -21,11 +24,20 @@
         </div>
         <form @submit.prevent="marge" id="tesk-form">
             <div class="wrap">
-                <input v-model="current.title" id="task-input" type="text" autocomplete="off">
+                <!-- <input v-model="current.title" id="task-input" type="text" autocomplete="off"> -->
+                <!-- input输入框 -->
+                <el-input v-model="current.title" id="task-input" placeholder="请输入..."></el-input>
                 <div v-if="current.id" class="detail">
-                    <textarea v-model="current.desc"></textarea>
-                    <input v-model="current.alert_at" type="datetime-local">
-                    <button class="primary" type="submit">提交</button>
+                    <!-- <textarea v-model="current.desc"></textarea> -->
+                    <!-- textarea输入框 -->
+                    <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="请输入详情" v-model="current.desc"></el-input>
+                    <!-- <input v-model="current.alert_at" type="datetime-local"> -->
+                    <!-- 时间选择 -->
+                    <el-date-picker v-model="current.alert_at" type="datetime" placeholder="选择日期时间" align="center" :picker-options="pickerOptions">
+                    </el-date-picker>
+                    <!-- <button class="primary" type="submit">提交</button> -->
+                    <!-- 提交按钮 -->
+                    <el-button type="primary" icon="el-icon-edit" circle native-type="submit"></el-button>
                 </div>
             </div>
         </form>
@@ -44,7 +56,9 @@
                     已经完成
                 </h2>
                 <div v-if="todo.completed" v-for="(todo, index) in list" class="item completed">
-                    <div @click="toggle_complete(todo.id)" class="toggle-complete"></div>
+                    <!-- <div @click="toggle_complete(todo.id)" class="toggle-complete"></div> -->
+                    <el-checkbox v-model="todo.completed"></el-checkbox>
+
                     <span class="title">
                         {{todo.title}}
                     </span>
@@ -56,19 +70,23 @@
     </div>
     <template id="task-tpl">
         <div class="item">
-            <div @click="action('toggle_complete', todo.id)" class="toggle-complete"></div> 
+            <!-- <div @click="action('toggle_complete', todo.id)" class="toggle-complete"></div>  -->
+            <el-checkbox v-model="todo.completed"></el-checkbox>
+           
             <span class="title">
                 {{todo.title}}
             </span>
-            <button @click="action('remove', todo.id)">删除</button>
-            <button @click="action('set_current', todo)">更新</button>
-            <button @click="action('toggle_detail', todo.id)">详情</button>
-            <div v-if="todo.show_detail" class='detail'>
-                {{todo.desc || '暂无详情'}}
-            </div>
-        </div>
+    <button @click="action('remove', todo.id)">删除</button>
+    <button @click="action('set_current', todo)">更新</button>
+    <button @click="action('toggle_detail', todo.id)">详情</button>
+    <div v-if="todo.show_detail" class='detail'>
+        {{todo.desc || '暂无详情'}}
+    </div>
+    </div>
     </template>
     <script src="lib/vue.js"></script>
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+    <script src="lib/index.js"></script>
     <script src="js/myStorage.js"></script>
     <script src="js/main.js"></script>
 </body>

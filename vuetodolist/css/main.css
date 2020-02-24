@@ -128,9 +128,20 @@ button.primary {
     border-color: #bbb;
 }
 
+.completed span {
+    color: #DCDFE6;
+    text-decoration: line-through;
+}
+
 .segment-title {
     color: #aaa;
     margin-top: 15px;
     margin-bottom: 5px;
     font-weight: lighter;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #DCDFE6;
+    border-color: #DCDFE6;
 }
