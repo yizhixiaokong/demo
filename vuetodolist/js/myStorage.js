@@ -17,7 +17,3 @@
 
     }
 })();
-
-ms.set('name', 'hxx');
-var name = ms.get('name');
-console.log('name', name);
