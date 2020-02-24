@@ -63,8 +63,9 @@
                     <span class="title">
                         {{todo.title}}
                     </span>
-                    <el-button icon="el-icon-delete" @click="remove(todo.id)"></el-button>
-
+                    <el-button icon="el-icon-delete" @click="remove(todo.id)">
+                        <!--删除-->
+                    </el-button>
                 </div>
             </div>
         </div>
@@ -78,12 +79,12 @@
             <span class="title">
                 {{todo.title}}
             </span>
-                <el-button icon="el-icon-delete" @click="action('remove', todo.id)"></el-button>
-                <el-button icon="el-icon-edit" @click="action('set_current', todo)"></el-button>
-                <el-button icon="el-icon-more-outline" @click="action('toggle_detail', todo.id)"></button>
-        <div v-if="todo.show_detail" class='detail'>
-            {{todo.desc || '暂无详情'}}
-        </div>
+            <el-button icon="el-icon-delete" @click="action('remove', todo.id)"><!--删除--></el-button>
+            <el-button icon="el-icon-edit" @click="action('set_current', todo)"><!--修改--></el-button>
+            <el-button icon="el-icon-more-outline" @click="action('toggle_detail', todo.id)"><!--更多--></el-button>
+            <div v-if="todo.show_detail" class='detail'>
+                    {{todo.desc || '暂无详情'}}
+            </div>
     </div>
     </template>
     <script src="lib/vue.js"></script>
