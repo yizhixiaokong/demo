@@ -1,27 +1,49 @@
 * {
-    background: rgba(0, 0, 0, .05);
+    /* background: rgba(0, 0, 0, .05); */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
 }
 
+body {
+    color: #444;
+}
+
 input,
 button,
 textarea {
-    border: 1px solid rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 3px;
     padding: 5px 10px;
 }
 
-input {
+input,
+textarea {
+    outline: none;
     display: block;
     width: 100%;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15);
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid #00a9de;
+}
+
+button.primary {
+    background: #00a9de;
+    color: #f7f3ea;
 }
 
 .wrap {
     max-width: 500px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .navbar,
@@ -30,7 +52,7 @@ input {
 }
 
 .navbar {
-    background: rgba(47, 47, 47, 0.98);
+    background: rgba(50, 50, 50, 0.95);
     color: #DDD;
     padding: 10px 0;
 }
@@ -38,10 +60,77 @@ input {
 .navbar h1 {
     font-size: 24px;
     margin: 0;
+    font-weight: lighter;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .header {
     padding: 15px 0;
     color: #555;
-    font-size: : 18px;
+    font-size: 18px;
+}
+
+.task-list .item {
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.task-list .item button {
+    display: none;
+    font-size: 80%;
+    background: #fff;
+}
+
+.task-list .item:hover {
+    background: rgba(0, 0, 0, .03);
+}
+
+.task-list .item:hover button {
+    display: inline-block;
+}
+
+.task-list .item .title {
+    padding: 10px;
+}
+
+.task-list .item .detail {
+    display: block;
+    font-size: 80%;
+    color: #666;
+}
+
+.task-list .item>* {
+    padding: 5px;
+    display: inline-block;
+    line-height: 1.2;
+    vertical-align: middle;
+}
+
+.toggle-complete {
+    width: 15px;
+    height: 15px;
+    /* background: #; */
+    border: 1.5px solid #46a9e4;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.toggle-complete:hover {
+    background: #50beff;
+    border-color: #3587b7;
+}
+
+.completed .toggle-complete {
+    background: #ccc;
+    border-color: #bbb;
+}
+
+.segment-title {
+    color: #aaa;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: lighter;
 }
